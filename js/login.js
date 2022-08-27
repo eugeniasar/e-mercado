@@ -8,10 +8,6 @@ function enviarFormulario() {
     if(password.value === null || password.value === ''){
         alert('Ingresa tu contraseña')
     } else {
-        redireccionar();
+        window.location.href = "portada.html";
     }
-}
-
-function redireccionar() {
-    window.location.href = "portada.html"
 }
