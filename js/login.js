@@ -8,6 +8,12 @@ function enviarFormulario() {
     if(password.value === null || password.value === ''){
         alert('Ingresa tu contraseña')
     } else {
+        localStorage.setItem("user", email.value)
         window.location.href = "portada.html";
     }
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+    let nomUsuario = localStorage.getItem("user")
+    document.getElementById('usuario').innerHTML = nomUsuario;
+})
