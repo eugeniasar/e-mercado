@@ -195,17 +195,32 @@ a.custom-card:hover {
   height: 150px;
 }
 
-.button {
+.buttoningresar {
   margin-top: 50px;
   height: 50px;
+  width: 100px;
+  border-color: #53C0FB;
   background-color: #0087F7;
-  border: none;
-  outline: #53C0FB;
   border-radius: 5px;
+  border-style:solid;
+  border-width: 3px;
   color: #fff;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .tittle {
   margin-top: 20px;
   font-size: 30px;
+}
+
+.inputlogin {
+  height: 40px;
+  width: 350px;
+  border: 1px solid silver;
+  border-radius: 5px;
+}
+
+.checked {
+  color: orange;
 }
