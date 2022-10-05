@@ -52,8 +52,6 @@ function showProductComments(comment) {
     document.getElementById("comentarios").innerHTML = htmlContentToAppend;
 }
 
-
-
 document.addEventListener("DOMContentLoaded", function () {
     getJSONData(COMMENTS_INFO).then(function (resultObj) {
         if (resultObj.status === "ok") {
@@ -68,6 +66,36 @@ document.addEventListener("DOMContentLoaded", function () {
         if (resultObj.status === "ok") {
             ;
             showInfoProds(resultObj.data);
+        }
+    });
+});
+
+//Productos relacionados
+
+function showRelatedProducts (array){
+    let htmlContentToAppend = ""; 
+    htmlContentToAppend += ` 
+    `  
+    for(let i=0; i< array.relatedProducts.length; i++){
+        let relatedProducts = array.relatedProducts[i];
+
+        htmlContentToAppend += ` 
+            <div class="col-3 m-3 card cursor-active" onclick="setProdID(${relatedProducts.id})">
+            <img class="card-img-top" src="${relatedProducts.image}"></img>
+            <div class="card-body">
+            <div class="card-text text-center">${relatedProducts.name}</div>
+            </div>
+         </div>
+        `  
+        document.getElementById("related-products").innerHTML = htmlContentToAppend;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function(){
+    getJSONData(PRODUCT_INFO).then(function(resultObj){
+        if (resultObj.status === "ok"){
+            ;
+            showRelatedProducts(resultObj.data);
         }
     });
 });

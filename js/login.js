@@ -17,3 +17,7 @@ document.addEventListener("DOMContentLoaded", function(){
     let nomUsuario = localStorage.getItem("user")
     document.getElementById('usuario').innerHTML = nomUsuario;
 })
+
+function cerrarSesion() {
+    localStorage.removeItem("user");
+}

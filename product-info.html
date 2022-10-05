@@ -30,9 +30,16 @@
           <li class="nav-item">
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="my-profile.html" id="usuario"></a>
-          </li>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+              <a id="usuario"></a>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="cart.html">Mi carrito</a></li>
+              <li><a class="dropdown-item" href="my-profile.html">Mi perfil</a></li>
+              <li><a class="dropdown-item" href="index.html" onclick="cerrarSesion()">Cerrar sesión</a></li>
+            </ul>
+          </div>
         </ul>
       </div>
     </div>
@@ -51,19 +58,26 @@
     </div>
     <div>
       <p>Tu opinión:</p>
-      <input>
+      <textarea style="width: 40%"></textarea>
     </div>
     <div>
       <p>Tu puntuación:</p>
-      <select>
+      <select style="width: 10%">
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
         <option value="4">4</option>
         <option value="5">5</option>
       </select><br>
-      <button>Enviar</button>
+      <button style="margin-top: 30px;" type="button" class="btn btn-primary">Enviar</button>
     </div>
+  </div>
+  <div  class="row mt-4">
+  <hr>
+    <h3> Productos relacionados </h3>
+  <div id="related-products">
+  </div>
+  </div>
   </main>
   <footer class="text-muted">
     <div class="container">
